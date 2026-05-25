@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Vanilaks",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-bmp180", "id": "bmp1", "top": -4.16, "left": 422.66, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 130.8,
+      "left": 368.6,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 246.2,
+      "left": 422.4,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "bmp1:SDA", "esp32:D21", "blue", [] ],
+    [ "bmp1:SCL", "esp32:D22", "yellow", [] ],
+    [ "bmp1:VCC", "esp32:3V3", "red", [] ],
+    [ "bmp1:GND", "esp32:GND.1", "black", [] ],
+    [ "led1:A", "esp32:D2", "green", [] ],
+    [ "led1:C", "esp32:GND.2", "black", [] ],
+    [ "btn1:1.l", "esp32:D13", "orange", [] ],
+    [ "btn1:2.l", "esp32:GND.2", "black", [] ]
+  ],
+  "dependencies": { "Adafruit BMP085 Library": "1.2.1" }
+}
