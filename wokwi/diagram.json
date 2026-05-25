@@ -3,40 +3,16 @@
   "author": "Vanilaks",
   "editor": "wokwi",
   "parts": [
-    {
-      "type": "board-esp32-devkit-v1",
-      "id": "esp32",
-      "top": 0,
-      "left": 0,
-      "attrs": {}
-    },
-    {
-      "type": "wokwi-bmp180",
-      "id": "bmp180",
-      "top": -100,
-      "left": 200,
-      "attrs": {}
-    },
-    {
-      "type": "wokwi-led",
-      "id": "led1",
-      "top": -100,
-      "left": 350,
-      "attrs": { "color": "green" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn1",
-      "top": 100,
-      "left": 350,
-      "attrs": { "color": "green" }
-    }
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-bmp180", "id": "bmp1", "top": 0, "left": 420, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 150, "left": 420, "attrs": { "color": "green" } },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 250, "left": 420, "attrs": { "color": "green" } }
   ],
   "connections": [
-    [ "bmp180:SDA", "esp32:21", "blue", [] ],
-    [ "bmp180:SCL", "esp32:22", "yellow", [] ],
-    [ "bmp180:VCC", "esp32:3V3", "red", [] ],
-    [ "bmp180:GND", "esp32:GND.1", "black", [] ],
+    [ "bmp1:SDA", "esp32:21", "blue", [] ],
+    [ "bmp1:SCL", "esp32:22", "yellow", [] ],
+    [ "bmp1:VCC", "esp32:3V3", "red", [] ],
+    [ "bmp1:GND", "esp32:GND.1", "black", [] ],
     [ "led1:A", "esp32:2", "green", [] ],
     [ "led1:K", "esp32:GND.2", "black", [] ],
     [ "btn1:1.l", "esp32:0", "orange", [] ],
